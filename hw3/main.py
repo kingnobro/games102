@@ -60,22 +60,19 @@ def curve_fitting(x, parameterization):
     t = []
     n = len(x)
     if parameterization == 'uniform':
-        step = 1 / (n - 1)
-        for i in range(n):
-            t.append(i * step)
+        t = [i for i in range(n)]
     elif parameterization == 'chordal':
         t.append(0)
         for i in range(1, n):
             t.append(t[i - 1] + np.abs(x[i] - x[i-1]))
-        t = [t[i] / t[-1] for i in range(n)]
     elif parameterization == 'centripetal':
         t.append(0)
         for i in range(1, n):
             t.append(t[i - 1] + np.sqrt(np.abs(x[i] - x[i-1])))
-        t = [t[i] / t[-1] for i in range(n)]
     else:
         assert(False, 'Wrong Parameterization Way')
     
+    t = [t[i] / t[-1] for i in range(n)]
     ps = [[t[i], x[i]] for i in range(n)]
     weights = regression_LSM(ps)
     return weights
