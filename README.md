@@ -30,3 +30,13 @@
 
 <img src="https://github.com/kingnobro/games102/blob/main/images/hw4.png" width="60%">
 
+
+
+### hw5
+
+- 细分曲线
+- 逼近型曲线细分：Chaiukin 方法、三次 B 样条细分方法
+- 插值型曲线细分：4 点细分方法
+
+<img src="https://github.com/kingnobro/games102/blob/main/images/hw5.gif" width="60%">
+
